@@ -12,25 +12,60 @@
 - View statistics about your links.
 - **No external dependencies** - uses only Python standard library.
 
-### Installation & Usage
-1. **Clone the repository**
-2. **No installation required** - uses only Python standard library
-3. **Run the app**
-   - On Linux:
-     ```bash
-     bash run_app.sh
-     ```
-   - On Windows:
-     Double-click `run_app.bat` (if available) or run:
-     ```bash
-     python app.py
-     ```
+### Installation & Usage on Linux
+
+#### Prerequisites
+- Python 3.8 or higher
+- Terminal access
+
+#### Step-by-Step Installation
+
+1. **Clone or download the repository**
+   ```bash
+   git clone <repository-url>
+   cd web_links_manager
+   ```
+
+2. **Give execute permissions to the run script**
+   ```bash
+   chmod +x run_app.sh
+   ```
+
+3. **Run the application**
+   
+   **Method 1: Using the run script (Recommended)**
+   ```bash
+   ./run_app.sh
+   ```
+   
+   **Method 2: Direct Python execution**
+   ```bash
+   python3 app.py
+   ```
+
 4. **Open your browser** and go to `http://localhost:8000`
+
+#### Troubleshooting
+
+**If you get "Permission denied" error:**
+```bash
+chmod +x run_app.sh
+```
+
+**If Python is not found:**
+```bash
+# Install Python 3
+sudo apt update
+sudo apt install python3 python3-pip
+```
+
+**If the port 8000 is already in use:**
+Edit `app.py` and change the port number in the `run_server()` function.
 
 ### Technical Details
 - **Web Server**: Python's built-in `http.server`
 - **Database**: SQLite3 (built-in)
-- **Form Processing**: CGI module (built-in)
+- **Form Processing**: Custom implementation using `urllib.parse`
 - **No external packages required**
 
 ---
@@ -47,31 +82,84 @@
 - عرض إحصائيات حول الروابط.
 - **بدون مكتبات خارجية** - يستخدم مكتبات Python الأساسية فقط.
 
-### طريقة التثبيت والتشغيل
-1. **استنساخ المشروع**
-2. **لا حاجة للتثبيت** - يستخدم مكتبات Python الأساسية فقط
+### طريقة التثبيت والتشغيل على Linux
+
+#### المتطلبات الأساسية
+- Python 3.8 أو أحدث
+- وصول إلى الطرفية (Terminal)
+
+#### خطوات التثبيت المفصلة
+
+1. **استنساخ أو تحميل المشروع**
+   ```bash
+   git clone <رابط-المشروع>
+   cd web_links_manager
+   ```
+
+2. **إعطاء صلاحيات التنفيذ لملف التشغيل**
+   ```bash
+   chmod +x run_app.sh
+   ```
+
 3. **تشغيل التطبيق**
-   - على لينكس:
-     ```bash
-     bash run_app.sh
-     ```
-   - على ويندوز:
-     شغّل `run_app.bat` (إن وجد) أو نفذ:
-     ```bash
-     python app.py
-     ```
+   
+   **الطريقة الأولى: استخدام سكريبت التشغيل (موصى بها)**
+   ```bash
+   ./run_app.sh
+   ```
+   
+   **الطريقة الثانية: تشغيل Python مباشرة**
+   ```bash
+   python3 app.py
+   ```
+
 4. **افتح المتصفح** وادخل إلى `http://localhost:8000`
+
+#### حل المشاكل الشائعة
+
+**إذا ظهرت رسالة "Permission denied":**
+```bash
+chmod +x run_app.sh
+```
+
+**إذا لم يتم العثور على Python:**
+```bash
+# تثبيت Python 3
+sudo apt update
+sudo apt install python3 python3-pip
+```
+
+**إذا كان المنفذ 8000 مستخدماً:**
+عدّل ملف `app.py` وغير رقم المنفذ في دالة `run_server()`.
 
 ### التفاصيل التقنية
 - **خادم الويب**: `http.server` المدمج في Python
 - **قاعدة البيانات**: SQLite3 (مدمج)
-- **معالجة النماذج**: وحدة CGI (مدمجة)
+- **معالجة النماذج**: تنفيذ مخصص باستخدام `urllib.parse`
 - **لا تحتاج مكتبات خارجية**
 
 ---
 
-**ملاحظة:**
+## Quick Start Commands (أوامر البدء السريع)
+
+```bash
+# Navigate to project directory
+cd web_links_manager
+
+# Give execute permissions
+chmod +x run_app.sh
+
+# Run the application
+./run_app.sh
+
+# Open browser and go to: http://localhost:8000
+```
+
+---
+
+**ملاحظات مهمة:**
 - قاعدة البيانات تحفظ تلقائياً في ملف `links.db`.
 - جميع القوالب مدمجة في الكود.
 - يمكنك استيراد وتصدير الروابط بسهولة من خلال الواجهة.
-- التطبيق يعمل على المنفذ 8000 بدلاً من 5000. 
+- التطبيق يعمل على المنفذ 8000.
+- لإيقاف التطبيق، اضغط `Ctrl+C` في الطرفية. 
