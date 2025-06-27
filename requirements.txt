@@ -1,0 +1,8 @@
+# No external dependencies required
+# This application uses only Python standard library modules:
+# - sqlite3 (database)
+# - http.server (web server)
+# - cgi (form processing)
+# - urllib.parse (URL parsing)
+# - csv, json, io (file operations)
+# - html (HTML escaping) 
