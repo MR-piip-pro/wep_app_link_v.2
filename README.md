@@ -22,7 +22,9 @@
 
 1. **Clone or download the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/MR-piip-pro/wep_app_link_v.2.git
+   ```
+   ```bash
    cd web_links_manager
    ```
 
